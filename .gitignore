@@ -1,0 +1,14 @@
+# Ignorar arquivos de ambiente que contêm segredos
+/server/.env
+
+# Ignorar a pasta de dependências do Node.js
+/server/node_modules
+/client/node_modules
+
+# Ignorar a pasta de arquivos compilados e gerados
+/server/dist
+/server/src/generated/prisma
+
+# Ignorar logs e arquivos de sistema operacional
+npm-debug.log
+.DS_Store
