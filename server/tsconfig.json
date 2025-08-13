@@ -6,7 +6,8 @@
     "rootDir": "./src", // Onde nosso código TypeScript original ficará
     "strict": true, // Habilita checagens de tipo mais rigorosas (boa prática)
     "esModuleInterop": true, // Melhora a compatibilidade entre módulos
-    "forceConsistentCasingInFileNames": true // Evita erros de importação por causa de maiúsculas/minúsculas
+    "forceConsistentCasingInFileNames": true, // Evita erros de importação por causa de maiúsculas/minúsculas
+    "resolveJsonModule": true
   },
   "include": ["src"], // Diz ao TypeScript para compilar apenas o que está na pasta 'src'
   "exclude": ["node_modules"] // Ignora a pasta de dependências
