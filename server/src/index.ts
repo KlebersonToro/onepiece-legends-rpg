@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 // 1. Importe o Prisma Client
 import { PrismaClient } from "./generated/prisma";
+import cors from 'cors';
 
 const app = express();
 const PORT = 3001;
@@ -9,11 +10,12 @@ const PORT = 3001;
 const prisma = new PrismaClient();
 
 app.use(express.json());
+app.use(cors());
 
 // 3. Crie uma nova rota para buscar as frutas (GET all fruits)
 app.get("/api/fruits", async (req: Request, res: Response) => {
   try {
-    // 4. Use o Prisma para buscar todos os registros da tabela DevilFruit
+    // 4. Use o Prisma para buscar todos os registros da tabela DevilFruit 
     const { categoria } = req.query;
 
     const whereClause = categoria ? { categoria: categoria as string } : {};
