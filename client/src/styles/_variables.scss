@@ -1,0 +1,55 @@
+// client/src/styles/_variables.scss (Versão M3)
+
+// ===============================================
+// 1. CORES-CHAVE (A identidade da sua marca)
+// ===============================================
+$cor-azul-key: #007bff;     // Azul principal
+$cor-roxo-key: #6f42c1;     // Roxo para Paramecia
+$cor-vermelho-key: #dc3545; // Vermelho para Zoan e erros
+$cor-cinza-key: #6c757d;    // Cinza para ações secundárias
+$cor-amarelo-key: #ffc107;  // Amarelo para avisos 
+
+// ===============================================
+// 2. PAPÉIS DE COR (Como as cores são usadas na UI)
+// ===============================================
+
+// -- Primary Roles (Ações mais importantes) --
+$primary: $cor-azul-key;
+$on-primary: #ffffff;
+$primary-container: #cfe2ff;
+$on-primary-container: #001d36;
+
+// -- Secondary Roles (Ações de menor destaque) --
+$secondary: $cor-cinza-key;
+$on-secondary: #ffffff;
+
+// -- Error Roles (Para exclusão, alertas, etc.) --
+$error: $cor-vermelho-key;
+$on-error: #ffffff;
+
+// -- Surface Roles (Cores de fundo dos elementos) --
+$surface: #f8f9fa;             // Fundo da página
+$on-surface: #1c1b1f;          // Cor do texto principal
+$surface-container: #ffffff;   // Fundo de elementos como cards
+$on-surface-variant: #49454f;  // Cor de texto com menos destaque
+$outline: #ddd7e6;             // Cor para bordas
+
+// -- Cores customizadas do tema --
+$zoan: $cor-vermelho-key;
+$on-zoan: #ffffff;
+$paramecia: $cor-roxo-key;
+$on-paramecia: #ffffff;
+$logia: $cor-azul-key;
+$on-logia: #ffffff;
+
+// ===============================================
+// 3. OUTRAS VARIÁVEIS DE DESIGN
+// ===============================================
+$border-radius: 8px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// ===============================================

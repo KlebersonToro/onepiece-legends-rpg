@@ -21,6 +21,7 @@ model DevilFruit {
   currentUser String? // O '?' significa que este campo pode ser nulo
   picture     String?
   categoria   String
+  fandomUrl   String?
 
   @@map("devil_fruits") // Mapeia este modelo para a tabela 'devil_fruits'
 }

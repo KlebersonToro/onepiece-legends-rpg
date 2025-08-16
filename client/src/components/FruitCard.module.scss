@@ -1,0 +1,132 @@
+// client/src/components/FruitCard.module.scss (Refatorado para M3)
+
+@import "../styles/variables";
+
+.fruitCard {
+  position: relative;
+  border-radius: $border-radius;
+  padding: $spacing-md;
+  padding-bottom: 50px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  background-color: $surface-container; // Fundo do card
+  color: $on-surface; // Cor do texto principal do card
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.fruitImage {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: $spacing-md;
+}
+
+.fruitInfo h3 {
+  margin: 0 0 10px 0;
+  color: $on-surface;
+}
+
+.fruitInfo p {
+  margin: 4px 0;
+  color: $on-surface-variant; // Texto com menos destaque
+}
+
+.category {
+  padding: 2px $spacing-sm;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+// Usando as cores de tema customizadas
+.category.logia {
+  background-color: $logia;
+  color: $on-logia;
+}
+.category.zoan {
+  background-color: $zoan;
+  color: $on-zoan;
+}
+.category.paramecia {
+  background-color: $paramecia;
+  color: $on-paramecia;
+}
+
+.fandomLink {
+  // Posicionamento
+  position: absolute;
+  top: $spacing-md; // Distância do topo
+  right: $spacing-md; // Distância da direita
+
+  // Tamanho e aparência
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; // Deixa o botão redondo
+  background-color: $surface; // Cor de fundo mais sutil
+  color: $on-surface-variant;
+  border: 1px solid $outline;
+  font-size: 16px;
+
+  // Centraliza o ícone
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Efeitos e interatividade
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.fandomLink:hover {
+  background-color: $primary-container;
+  color: $on-primary-container;
+  border-color: $primary;
+  transform: scale(1.1);
+}
+
+.cardActions {
+  position: absolute; // Adicionado
+  bottom: $spacing-md; // Distância da parte inferior
+  left: $spacing-md; // Distância da esquerda
+  display: flex;
+  gap: $spacing-sm; // Espaço entre os ícones
+  padding: 0; // Remove o padding interno
+  width: auto; // Ajusta a largura ao conteúdo
+  background-color: transparent; // Para que o fundo do card apareça
+}
+
+.editButton,
+.deleteButton {
+  border: none;
+  width: 32px; // Tamanho do ícone
+  height: 32px; // Tamanho do ícone
+  border-radius: 50%; // Deixa os botões redondos
+  font-weight: normal; // Remove o negrito
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; // Tamanho do ícone (usaremos texto como ícone por enquanto)
+}
+
+.editButton {
+  background-color: $primary;
+  color: $on-primary;
+}
+
+.editButton:hover {
+  opacity: 0.9;
+}
+
+.deleteButton {
+  background-color: $error;
+  color: $on-error;
+}
+
+.deleteButton:hover {
+  opacity: 0.9;
+}
