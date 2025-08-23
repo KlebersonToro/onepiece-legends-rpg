@@ -1,0 +1,36 @@
+// src/components/Modal.module.scss
+@import "../styles/variables";
+
+.modalOverlay {
+  position: fixed; /* Flutua sobre todo o conteúdo */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Garante que fique na frente de tudo */
+}
+
+.modalContent {
+  background-color: $surface-container;
+  padding: $spacing-lg;
+  border-radius: $border-radius;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  min-width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-md;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: $on-surface-variant;
+}

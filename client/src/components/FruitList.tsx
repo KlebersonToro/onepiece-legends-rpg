@@ -8,7 +8,8 @@ interface FruitListProps {
   fruits: DevilFruit[];
   loading: boolean;
   error: string | null;
-  onDelete: (id: number) => void; // 1. O componente agora espera receber a função onDelete
+  onDelete: (id: number) => void; // O componente agora espera receber a função onDelete
+  onEdit: (fruit: DevilFruit) => void; // O componente agora espera receber a função onEdit
 }
 
 const FruitList: React.FC<FruitListProps> = ({
@@ -16,6 +17,7 @@ const FruitList: React.FC<FruitListProps> = ({
   loading,
   error,
   onDelete,
+  onEdit,
 }) => {
   if (loading) return <p>Carregando frutas do diabo...</p>;
   if (error) return <p>Erro ao buscar dados: {error}</p>;
@@ -26,7 +28,7 @@ const FruitList: React.FC<FruitListProps> = ({
       <div className={styles.fruitListContainer}>
         {fruits.map((fruit) => (
           // 2. A função onDelete recebida é passada para cada FruitCard
-          <FruitCard key={fruit.id} fruit={fruit} onDelete={onDelete} />
+          <FruitCard key={fruit.id} fruit={fruit} onDelete={onDelete} onEdit={onEdit} />
         ))}
       </div>
     </div>

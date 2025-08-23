@@ -1,15 +1,17 @@
 // src/components/AddFruitForm.tsx
 import React, { useState } from "react";
 import styles from "./AddFruitForm.module.scss";
-import { DevilFruit } from '../types'; // Importa a interface do App.tsx
+import { DevilFruit } from "../types"; // Importa a interface do App.tsx
+import { API_BASE_URL } from "../config/config";
 
 // 1. DEFINIMOS A INTERFACE PARA AS PROPS QUE O COMPONENTE RECEBE
 interface AddFruitFormProps {
   onFruitAdded: (fruit: DevilFruit) => void;
+  onCancel: () => void;
 }
 
 // 2. O COMPONENTE AGORA USA ESSA INTERFACE E RECEBE 'onFruitAdded'
-const AddFruitForm: React.FC<AddFruitFormProps> = ({ onFruitAdded }) => {
+const AddFruitForm: React.FC<AddFruitFormProps> = ({ onFruitAdded, onCancel }) => {
   // O estado dos inputs continua o mesmo
   const [name, setName] = useState("");
   const [meaning, setMeaning] = useState("");
@@ -22,7 +24,7 @@ const AddFruitForm: React.FC<AddFruitFormProps> = ({ onFruitAdded }) => {
     const newFruitData = { name, meaning, categoria, currentUser, picture };
 
     try {
-      const response = await fetch("http://localhost:3001/api/fruits", {
+      const response = await fetch(`${API_BASE_URL}/api/fruits`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newFruitData),
@@ -53,6 +55,7 @@ const AddFruitForm: React.FC<AddFruitFormProps> = ({ onFruitAdded }) => {
   return (
     <form onSubmit={handleSubmit} className={styles.fruitForm}>
       <h3>Adicionar Nova Akuma no Mi</h3>
+      {/* Todos os seus inputs continuam aqui... */}
       <input
         type="text"
         placeholder="Nome da Fruta"
@@ -84,7 +87,20 @@ const AddFruitForm: React.FC<AddFruitFormProps> = ({ onFruitAdded }) => {
         value={picture}
         onChange={(e) => setPicture(e.target.value)}
       />
-      <button type="submit">Adicionar Fruta</button>
+
+      {/* 2. ATUALIZAMOS OS BOTÕES */}
+      <div className={styles.actionsContainer}>
+        <button
+          type="button"
+          onClick={onCancel}
+          className={styles.buttonSecondary}
+        >
+          Cancelar
+        </button>
+        <button type="submit" className={styles.buttonPrimary}>
+          Adicionar Fruta
+        </button>
+      </div>
     </form>
   );
 };

@@ -1,3 +1,7 @@
+// src/App.scss
+@import './styles/variables';
+@import './styles/buttons';
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main-actions-container {
+  padding: 0 $spacing-lg;
+  margin-bottom: $spacing-lg;
+  display: flex;
+}
+
+.add-fruit-button {
+  // Reutiliza os estilos que criamos
+  @extend .button;
+  @extend .buttonPrimary;
 }

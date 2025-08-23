@@ -17,9 +17,10 @@ interface DevilFruit {
 interface FruitCardProps {
   fruit: DevilFruit;
   onDelete: (id: number) => void;
+  onEdit: (fruit: DevilFruit) => void;
 }
 
-const FruitCard: React.FC<FruitCardProps> = ({ fruit, onDelete }) => {
+const FruitCard: React.FC<FruitCardProps> = ({ fruit, onDelete, onEdit }) => {
   const imageUrl =
     fruit.picture || "https://via.placeholder.com/150?text=Sem+Imagem";
 
@@ -58,9 +59,16 @@ const FruitCard: React.FC<FruitCardProps> = ({ fruit, onDelete }) => {
       </div>
       {/* 2. ADICIONAMOS O CONTAINER PARA OS BOTÕES DE AÇÃO */}
       <div className={styles.cardActions}>
-        <button className={styles.editButton} title="Editar">
+        {/* Botão para editar */}
+        <button
+          onClick={() => onEdit(fruit)}
+          className={styles.editButton}
+          title="Editar"
+        >
           ✏️
         </button>
+
+        {/* Botão para excluir */}
         <button
           onClick={() => onDelete(fruit.id)}
           className={styles.deleteButton}

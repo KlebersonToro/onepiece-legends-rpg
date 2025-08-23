@@ -1,0 +1,30 @@
+@import "./variables";
+
+// NOVO: Estilos de botão genéricos
+.button {
+  padding: $spacing-sm $spacing-lg;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonPrimary {
+  @extend .button; // Herda os estilos do .button
+  background-color: $primary;
+  color: $on-primary;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.buttonSecondary {
+  @extend .button;
+  background-color: $surface-container;
+  color: $on-surface;
+  border: 1px solid $outline;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
